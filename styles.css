@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+nav {
+    
+    background-color: black;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.nav-titulo {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+}
+
+.contenedor {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    z-index: 10;
+    background-color: black;
+    transition: .3s ease-out;
+    padding-top: 20px;
+    overflow: auto;
+    max-height: 100vh;
+}
+
+.contenedor img {
+    width: 80px;
+    margin: 50px auto;
+    display: block;
+}
+
+.contenedor-usuario {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.contenedor-usuario svg {
+    cursor: pointer;
+}
+
+.user-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+nav a {
+    width: 100%;
+    padding: 15px 30px;
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    background-color: rgb(162, 114, 207);
+}
+
+.open-sidebar-button, .close-sidebar-button {
+    display: block;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+#sidebar-active:checked ~ .contenedor {
+    left: 0; 
+}
+
+#sidebar-active:checked ~ #overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
